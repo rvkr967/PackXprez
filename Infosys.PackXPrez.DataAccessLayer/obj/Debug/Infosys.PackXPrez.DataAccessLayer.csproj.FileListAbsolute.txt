@@ -1,0 +1,6 @@
+E:\Infosys.PackXPrez\Infosys.PackXPrez.DataAccessLayer\bin\Debug\Infosys.PackXPrez.DataAccessLayer.dll
+E:\Infosys.PackXPrez\Infosys.PackXPrez.DataAccessLayer\bin\Debug\Infosys.PackXPrez.DataAccessLayer.pdb
+E:\Infosys.PackXPrez\Infosys.PackXPrez.DataAccessLayer\obj\Debug\Infosys.PackXPrez.DataAccessLayer.csprojAssemblyReference.cache
+E:\Infosys.PackXPrez\Infosys.PackXPrez.DataAccessLayer\obj\Debug\Infosys.PackXPrez.DataAccessLayer.csproj.CoreCompileInputs.cache
+E:\Infosys.PackXPrez\Infosys.PackXPrez.DataAccessLayer\obj\Debug\Infosys.PackXPrez.DataAccessLayer.dll
+E:\Infosys.PackXPrez\Infosys.PackXPrez.DataAccessLayer\obj\Debug\Infosys.PackXPrez.DataAccessLayer.pdb

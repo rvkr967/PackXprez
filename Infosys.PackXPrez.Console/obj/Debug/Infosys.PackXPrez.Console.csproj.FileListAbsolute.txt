@@ -1,0 +1,14 @@
+E:\Infosys.PackXPrez\Infosys.PackXPrez.Console\bin\Debug\Infosys.PackXPrez.Console.exe.config
+E:\Infosys.PackXPrez\Infosys.PackXPrez.Console\bin\Debug\Infosys.PackXPrez.Console.exe
+E:\Infosys.PackXPrez\Infosys.PackXPrez.Console\bin\Debug\Infosys.PackXPrez.Console.pdb
+E:\Infosys.PackXPrez\Infosys.PackXPrez.Console\bin\Debug\Infosys.PackXPrez.BusinessLayer.dll
+E:\Infosys.PackXPrez\Infosys.PackXPrez.Console\bin\Debug\Infosys.PackXPrez.Common.dll
+E:\Infosys.PackXPrez\Infosys.PackXPrez.Console\bin\Debug\Infosys.PackXPrez.DataAccessLayer.dll
+E:\Infosys.PackXPrez\Infosys.PackXPrez.Console\bin\Debug\Infosys.PackXPrez.BusinessLayer.pdb
+E:\Infosys.PackXPrez\Infosys.PackXPrez.Console\bin\Debug\Infosys.PackXPrez.Common.pdb
+E:\Infosys.PackXPrez\Infosys.PackXPrez.Console\bin\Debug\Infosys.PackXPrez.DataAccessLayer.pdb
+E:\Infosys.PackXPrez\Infosys.PackXPrez.Console\obj\Debug\Infosys.PackXPrez.Console.csprojAssemblyReference.cache
+E:\Infosys.PackXPrez\Infosys.PackXPrez.Console\obj\Debug\Infosys.PackXPrez.Console.csproj.CoreCompileInputs.cache
+E:\Infosys.PackXPrez\Infosys.PackXPrez.Console\obj\Debug\Infosys.PackXPrez.Console.csproj.CopyComplete
+E:\Infosys.PackXPrez\Infosys.PackXPrez.Console\obj\Debug\Infosys.PackXPrez.Console.exe
+E:\Infosys.PackXPrez\Infosys.PackXPrez.Console\obj\Debug\Infosys.PackXPrez.Console.pdb

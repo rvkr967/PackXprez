@@ -1,0 +1,6 @@
+E:\Infosys.PackXPrez\Infosys.PackXPrez.Common\bin\Debug\Infosys.PackXPrez.Common.dll
+E:\Infosys.PackXPrez\Infosys.PackXPrez.Common\bin\Debug\Infosys.PackXPrez.Common.pdb
+E:\Infosys.PackXPrez\Infosys.PackXPrez.Common\obj\Debug\Infosys.PackXPrez.Common.csprojAssemblyReference.cache
+E:\Infosys.PackXPrez\Infosys.PackXPrez.Common\obj\Debug\Infosys.PackXPrez.Common.csproj.CoreCompileInputs.cache
+E:\Infosys.PackXPrez\Infosys.PackXPrez.Common\obj\Debug\Infosys.PackXPrez.Common.dll
+E:\Infosys.PackXPrez\Infosys.PackXPrez.Common\obj\Debug\Infosys.PackXPrez.Common.pdb

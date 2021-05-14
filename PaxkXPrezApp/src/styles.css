@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "~font-awesome/css/font-awesome.css";
+@import './app/quickKart-styles/quickKart-styles.css';
+.loader {
+  border: 16px solid  #ffffff; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 80px;
+  height:80px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

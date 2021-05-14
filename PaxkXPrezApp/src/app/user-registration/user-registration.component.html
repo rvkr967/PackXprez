@@ -1,0 +1,129 @@
+<app-common-layout></app-common-layout>
+<div class="container">
+  <div class="jumbotron" style="text-align:center; margin-top:0px;">
+    <h3 style="text-align:center;color:darkblue;"><b>Register</b></h3>
+    <form #userRegForm="ngForm" (ngSubmit)="submituserRegForm(userRegForm)">
+      <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <div class="col" style="text-align:left">
+              <label>Name:</label>
+            </div>
+            <div class="input-group">
+              <input type="text" name="name" #nameRef="ngModel" class="form-control" ngModel required pattern="^[A-Za-z ]+$">
+            </div>
+            <div *ngIf="nameRef.errors && (nameRef.dirty || nameRef.touched)" style="text-align:left; padding-top:5px; color:red;">
+              <div [hidden]="!nameRef.errors.required">
+                <p>&nbsp;Name is mandatory</p>
+              </div>
+              <div [hidden]="!nameRef.errors.pattern">
+                <p>&nbsp;Name is not entered in proper format</p>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col" style="text-align:left">
+              <label>Email ID:</label>
+            </div>
+            <div class="input-group">
+              <input type="email" name="email" #emailRef="ngModel" class="form-control" ngModel required pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$">
+            </div>
+            <div *ngIf="emailRef.errors && (emailRef.dirty || emailRef.touched)" style="text-align:left; padding-top:5px; color:red;">
+              <div [hidden]="!emailRef.errors.required">
+                <p>&nbsp;Email id is mandatory</p>
+              </div>
+              <div [hidden]="!emailRef.errors.pattern">
+                <p>&nbsp;Email id is not entered in proper format</p>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col" style="text-align:left">
+              <label>Password:</label>
+            </div>
+            <div class="input-group">
+              <input type="password" name="password" #passwordRef="ngModel" [(ngModel)]="p" class="form-control" ngModel required pattern=".{8,16}$">
+            </div>
+            <div *ngIf="passwordRef.errors && (passwordRef.dirty || passwordRef.touched)" style="text-align:left; padding-top:5px; color:red;">
+              <div [hidden]="!passwordRef.errors.required">
+                <p>&nbsp;Password is mandatory</p>
+              </div>
+              <div [hidden]="!passwordRef.errors.pattern">
+                <p>&nbsp;Password must be of 8-16 characters</p>
+              </div>
+            </div>
+            <div class="col" style="text-align:left">
+              <label>Confirm Password:</label>
+            </div>
+            <div class="input-group">
+              <input type="password" name="confpassword" #confpasswordRef="ngModel" [(ngModel)]="cp" class="form-control" ngModel required>
+            </div>
+            <div style="text-align:left; padding-top:5px; color:red;" *ngIf="cp!=p && confpasswordRef.dirty">&nbsp;Passwords do not match</div>
+          </div>
+          <div class="form-group">
+            <div class="col" style="text-align:left">
+              <label>Contact Number:</label>
+            </div>
+            <div class="input-group">
+              <input type="number" name="mobile" #mobileRef="ngModel" class="form-control" ngModel required pattern=".{10}$">
+            </div>
+            <div *ngIf="mobileRef.errors && (mobileRef.dirty || mobileRef.touched)" style="text-align:left; padding-top:5px; color:red;">
+              <div [hidden]="!mobileRef.errors.required">
+                <p>&nbsp;Contact number is mandatory</p>
+              </div>
+              <div [hidden]="!mobileRef.errors.pattern">
+                <p>&nbsp;Contactnumber should be only 10 digits</p>
+              </div>
+            </div>
+          </div>
+          <h5 style="text-align:center">Address 1</h5>
+          <div class="container" style="background-color:lightgray">
+            Building No:<input type="text" name="bdno" #bdnoRef="ngModel" class="form-control" ngModel required pattern="^[A-Za-z0-9 ]+$">
+            <div *ngIf="bdnoRef.errors && (bdnoRef.dirty || bdnoRef.touched)" style="text-align:left; padding-top:5px; color:red;">
+              <div [hidden]="!bdnoRef.errors.required">
+                <p>&nbsp;Building number is mandatory</p>
+              </div>
+              <div [hidden]="!bdnoRef.errors.pattern">
+                <p>Special characters are not allowed</p>
+              </div>
+            </div>
+            Street No:<input type="text" name="stno" #stnoRef="ngModel" class="form-control" ngModel required pattern="^[A-Za-z0-9 ]+$">
+            <div *ngIf="stnoRef.errors && (stnoRef.dirty || stnoRef.touched)" style="text-align:left; padding-top:5px; color:red;">
+              <div [hidden]="!stnoRef.errors.required">
+                <p>&nbsp;Street name/number is mandatory</p>
+              </div>
+              <div [hidden]="!stnoRef.errors.pattern">
+                <p>Special characters are not allowed</p>
+              </div>
+            </div>
+            Locality:<input type="text" name="locality" #lcltyRef="ngModel" class="form-control" ngModel required pattern="^[A-Za-z ]+$">
+            <div *ngIf="lcltyRef.errors && (lcltyRef.dirty || lcltyRef.touched)" style="text-align:left; padding-top:5px; color:red;">
+              <div [hidden]="!lcltyRef.errors.required">
+                <p>&nbsp;Locality is mandatory</p>
+              </div>
+              <div [hidden]="!lcltyRef.errors.pattern">
+                <p>Only alphabets are allowed</p>
+              </div>
+            </div>
+            Pincode:<input type="number" name="pincode" #rcvrpcodeRef="ngModel" [(ngModel)]="pin" class="form-control" ngModel required>
+            <div *ngIf="pin<100000||pin>999999" style="text-align:left; padding-top:5px; color:red;">
+              <p>&nbsp;Enter a valid Pincode</p>
+            </div>
+            <br />
+          </div>
+          <br />
+          <div class="form-group"  style="text-align:left">
+            <button type="submit" [disabled]="!loginForm.form.valid" class="btn">Register</button>&nbsp;&nbsp;<button type="submit" routerLink="/home" class="btn">Cancel</button>
+          </div>
+          <img class="img-responsive" src="src/app/packXPrez-images/giphy.gif" style="height:60px;width:60px" *ngIf="gif" />
+        </div>
+        <div class="col-md-4">
+        </div>
+      </div>
+    </form>
+    <div *ngIf="regStatus">registration failed</div>
+    <div *ngIf="failStatus">registration failed</div>
+  </div>
+</div>

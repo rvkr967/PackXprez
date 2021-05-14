@@ -1,0 +1,114 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <a class="navbar-brand">Schedule Shipment</a>
+  <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a routerLink="/home" class="navbar-brand" href="#">Home</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <div class="jumbotron" style="text-align:center; margin-top:0px;">
+    <form #shipregForm="ngForm" (ngSubmit)="submitvalForm(shipregForm)">
+      <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <div class="col" style="text-align:left">
+              <label>Pickup Pincode:</label>
+            </div>
+            <div class="col; input-group">
+              <input type="number" name="pkpin" #pkpinRef="ngModel" class="form-control" min="100000" max="999999" ngModel required>
+            </div>
+            <div *ngIf="pkpinRef.errors && (pkpinRef.dirty || pkpinRef.touched)" style="text-align:left; padding-top:5px; color:red;">
+              <div [hidden]="!pkpinRef.errors.required">
+                <p>&nbsp;Pickup Pincode is mandatory</p>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col" style="text-align:left">
+              <label>Delivery Pincode:</label>
+            </div>
+            <div class="col; input-group">
+              <input type="number" name="delpin" #delpinRef="ngModel" class="form-control" min="100000" max="999999" ngModel required>
+            </div>
+            <div *ngIf="delpinRef.errors && (delpinRef.dirty || delpinRef.touched)" style="text-align:left; padding-top:5px; color:red;">
+              <div [hidden]="!delpinRef.errors.required">
+                <p>&nbsp;Delivery Pincode is mandatory</p>
+              </div>
+            </div>
+          </div>
+          <div class="form-group"  style="text-align:left">
+            <button type="submit" [disabled]="!shipregForm.form.valid" class="btn">Check Availability</button>&nbsp;&nbsp;<button type="submit" routerLink="/home" class="btn">Cancel</button>
+          </div>
+          <div style="text-align:center">
+            <img class="img-responsive" src="src/app/packXPrez-images/giphy.gif" style="height:60px;width:60px" *ngIf="gif" />
+          </div>
+        </div>
+      </div>
+    </form>
+    <h5 style="color:red" *ngIf="valid1">Sorry!! We are Unserviceable</h5>
+    <form #shipreggForm="ngForm" (ngSubmit)="submitregForm(shipreggForm)" *ngIf="valid2">
+      <h6 style="color:green" *ngIf="valid2">Service is available at the location</h6>
+      <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            Shipment Type:<select class="form-control" name="shiptype" #shiptypeRef="ngModel" ngModel required>
+              <option value="Heavy">Heavy</option>
+              <option value="Perishable">Perishable</option>
+              <option value="Fragile">Fragile</option>
+            </select>
+            Length:<input type="number" name="length" [(ngModel)]="len" #lengthRef="ngModel" class="form-control" ngModel required>
+            Breadth:<input type="number" name="breadth" [(ngModel)]="breadth" #breadthRef="ngModel" class="form-control" ngModel required>
+            Height:<input type="number" name="height" [(ngModel)]="height" #heightRef="ngModel" class="form-control" ngModel required>
+            Approx. Weight:<input type="number" name="weight" [(ngModel)]="weight" #weightRef="ngModel" class="form-control" ngModel required>
+            Delivery Option:<select class="form-control" name="deloption" [(ngModel)]="shiptype" #deloptionRef="ngModel" ngModel required>
+              <option value="Express">Express</option>
+              <option value="Overnight">Overnight</option>
+              <option value="Standard">Standard</option>
+            </select>
+            Choose TimeSlot:<select class="form-control" name="timeslot" #timeslotRef="ngModel" ngModel required>
+              <option value="04-14-2020">04-15-2020</option>
+              <option value="04-15-2020">04-16-2020</option>
+              <option value="04-16-2020">04-17-2020</option>
+            </select>
+            Choose Pickup Address:<select class="form-control" name="pkaddress" #pkaddressRef="ngModel" ngModel required>
+              <option *ngFor="let addrs of addresses" value={{addrs.addressId}}>
+                {{addrs.buildingNo}},{{addrs.streetNo}},{{addrs.locality}}-{{addrs.pincode}}
+              </option>
+            </select>
+            <br />
+            <h4 style="color:black">Receiver's Address:</h4>
+            <div class="container" style="background-color:lightgray">
+              Building No:<input type="text" name="bdno" #bdnoRef="ngModel" class="form-control" ngModel required>
+              Street No:<input type="text" name="stno" #stnoRef="ngModel" class="form-control" ngModel required>
+              Locality:<input type="text" name="lclty" #lcltyRef="ngModel" class="form-control" ngModel required>
+              Pincode:<input type="number" name="rcvrpcode" #rcvrpcodeRef="ngModel" class="form-control" ngModel required>
+              Contact Number:<input type="number" name="mobile" #mobileRef="ngModel" class="form-control" ngModel required>
+              <br />
+            </div>
+            Choose Approx. Cost:<input type="number" name="appcost" #appcostRef="ngModel" class="form-control" ngModel required>
+            Packaging:<input type="checkbox" name="pksserv" value="true" [(ngModel)]="pkgserv" #pksservRef="ngModel" class="form-control" ngModel>
+            <div *ngIf="appcostRef.touched && appcostRef.dirty">{{calculateCharges()}}</div>
+            <br />
+            <h5 style="color:darkblue">Approx. Cost:Rs {{price}}</h5>
+            <h6 style="color:green">Insurance will be applied for packages worth INR 1000 and above</h6>
+          </div>
+          <div class="form-group"  style="text-align:left">
+            <button type="submit" [disabled]="!shipreggForm.form.valid" class="btn">Schedule Pickup</button>&nbsp;&nbsp;<button type="submit" routerLink="/home" class="btn">Cancel</button>
+          </div>
+          <div style="text-align:center">
+            <img class="img-responsive" src="src/app/packXPrez-images/giphy.gif" style="height:60px;width:60px" *ngIf="gif1" />
+          </div>
+          <h5 style="color:green" *ngIf="succes">Registration Succesful.Your TransactionId:{{tranId}}</h5>
+          <h5 style="color:red" *ngIf="succes1">Something went wrong!! Please try again.</h5>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

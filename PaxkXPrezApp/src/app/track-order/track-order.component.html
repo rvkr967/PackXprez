@@ -1,0 +1,26 @@
+<div *ngIf="commonLayout">
+  <app-common-layout></app-common-layout>
+</div>
+<div *ngIf="customerLayout">
+  <app-customer-layout></app-customer-layout>
+</div>
+<div class="container">
+  <form #trackOrderForm="ngForm" (ngSubmit)="getStatus(number.value)">
+    <div class="jumbotron" style="text-align:center; margin-top:0px;">
+      <h2 style="color:midnightblue">Track Shipment</h2>
+      <br />
+      <label>Airway Bill No:</label>&nbsp;
+      <div style="margin-left:400px">
+        <input type="number" #number="ngModel" class="form-control qkinput" [ngModelOptions]="{standalone: true}" required ngModel />
+      </div>
+      <br />
+      <button type="submit" style="background-color:cornflowerblue" class="btn"><h6 style="color:white">Track</h6></button>
+      &nbsp;&nbsp;
+      <button type="submit" style="background-color:cornflowerblue" class="btn" onclick=""><h6 style="color:white">Cancel</h6></button>
+    </div>
+    <div style="text-align:center">
+      <img class="img-responsive" src="src/app/packXPrez-images/giphy.gif" style="height:60px;width:60px" *ngIf="gif" />
+    </div>
+    <h5 style="text-align:center;color:green">{{message}}</h5>
+  </form>
+</div>

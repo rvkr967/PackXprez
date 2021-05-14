@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Infosys.PackXPrez.BusinessLayer\Infosys.PackXPrez.BusinessLayer.csproj" />
+    <ProjectReference Include="..\Infosys.PackXPrez.Common\Infosys.PackXPrez.Common.csproj" />
+    <ProjectReference Include="..\Infosys.PackXPrez.DataAccessLayer\Infosys.PackXPrez.DataAccessLayer.csproj" />
+  </ItemGroup>
+
+</Project>
